@@ -1,7 +1,11 @@
 <template>
   <div class="side">
-    <SideButton v-bind:logo="true" class="side__logo" />
-    <SideButton v-bind:tools="true" class="side__el" />
+    <router-link to="/" v-slot="{ isActive }">
+      <SideButton v-bind:logo="true" :isClicked="isActive" class="side__logo" custom/>
+    </router-link>
+    <router-link to="/test" v-slot="{ isActive }">
+      <SideButton v-bind:tools="true" :isClicked="isActive" class="side__el" custom/>
+    </router-link>
     <SideButton v-bind:chart="true" class="side__el" />
     <SideButton v-bind:wallet="true" class="side__el" />
     <SideButton v-bind:attachment="true" class="side__el" />

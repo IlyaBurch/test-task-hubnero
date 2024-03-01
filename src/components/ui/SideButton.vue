@@ -1,17 +1,55 @@
 <template>
   <div>
-    <button v-if="logo" class="side__button side__button--logo"></button>
-    <button v-if="tools" class="side__button side__button--menu side__button--tools"></button>
-    <button v-if="chart" class="side__button side__button--menu side__button--chart"></button>
-    <button v-if="wallet" class="side__button side__button--menu side__button--money"></button>
-    <button v-if="attachment" class="side__button side__button--menu side__button--attachment"></button>
-    <button v-if="document" class="side__button side__button--menu side__button--document"></button>
-    <button v-if="ticket" class="side__button side__button--menu side__button--ticket"></button>
-    <button v-if="settings" class="side__button side__button--menu side__button--settings"></button>
-    <button v-if="productChart" class="side__button side__button--menu side__button--product-chart"></button>
-    <button v-if="users" class="side__button side__button--menu side__button--users"></button>
+    <button v-if="logo" class="side__button side__button--logo" />
+    <button
+      v-if="tools"
+      :class="{ clicked: isClicked }"
+      class="side__button side__button--menu side__button--tools"
+    ></button>
+    <button
+      v-if="chart"
+      :class="{ clicked: isClicked }"
+      class="side__button side__button--menu side__button--chart"
+    ></button>
+    <button
+      v-if="wallet"
+      :class="{ clicked: isClicked }"
+      class="side__button side__button--menu side__button--money"
+    ></button>
+    <button
+      v-if="attachment"
+      :class="{ clicked: isClicked }"
+      class="side__button side__button--menu side__button--attachment"
+    ></button>
+    <button
+      v-if="document"
+      :class="{ clicked: isClicked }"
+      class="side__button side__button--menu side__button--document"
+    ></button>
+    <button
+      v-if="ticket"
+      :class="{ clicked: isClicked }"
+      class="side__button side__button--menu side__button--ticket"
+    ></button>
+    <button
+      v-if="settings"
+      :class="{ clicked: isClicked }"
+      class="side__button side__button--menu side__button--settings"
+    ></button>
+    <button
+      v-if="productChart"
+      :class="{ clicked: isClicked }"
+      class="side__button side__button--menu side__button--product-chart"
+    ></button>
+    <button
+      v-if="users"
+      :class="{ clicked: isClicked }"
+      class="side__button side__button--menu side__button--users"
+    ></button>
   </div>
 </template>
+
+//TODO: ПЕРЕДЕЛАТЬ НА ROUTER LINK
 
 <script>
 export default {
@@ -57,12 +95,21 @@ export default {
       type: Boolean,
       default: false,
     },
+    isClicked: {
+      type: Boolean,
+      default: false,
+    },
   },
-  // data() {
+  // data: function () {
   //   return {
-
+  //     isClicked: false,
   //   };
   // },
+  methods: {
+    clicked() {
+      this.isClicked = !this.isClicked;
+    },
+  },
 };
 </script>
 
@@ -78,21 +125,20 @@ export default {
   background-image: url(@/assets/icons/hubnero_logo.svg);
 }
 
-.side__button--menu{
-  background-color: #8591AE;
-  transition: ease-in-out .2s;
+.side__button--menu {
+  background-color: #8591ae;
+  transition: ease-in-out 0.2s;
 }
 .side__button--menu:hover {
-  background-color: #8F20EF;
-  transition: ease-in-out .2s;
+  background-color: #8f20ef;
+  transition: ease-in-out 0.2s;
 }
 
-.side__button--menu:active{
-  background-color: #8F20EF
+.clicked {
+  background-color: #8f20ef;
 }
-.side__button--menu:active::before{
+.clicked::before {
   position: absolute;
-
 }
 .side__button--tools {
   mask-size: cover;
