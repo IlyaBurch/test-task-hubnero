@@ -1,19 +1,98 @@
 <template>
   <div class="side">
-    <router-link to="/" v-slot="{ isActive }">
-      <SideButton v-bind:logo="true" :isClicked="isActive" class="side__logo" custom/>
+    <SideButton v-bind:logo="true" class="side__logo" custom />
+    
+    <router-link to="/tools" v-slot="{ isActive, navigate }" custom>
+      <a @click="navigate">
+        <SideButton
+          v-bind:tools="true"
+          :isClicked="isActive"
+          class="side__el"
+          custom
+        />
+      </a>
     </router-link>
-    <router-link to="/test" v-slot="{ isActive }">
-      <SideButton v-bind:tools="true" :isClicked="isActive" class="side__el" custom/>
+
+    <router-link to="/chart" v-slot="{ isActive, navigate }" custom>
+      <a @click="navigate">
+        <SideButton
+          v-bind:chart="true"
+          :isClicked="isActive"
+          class="side__el"
+          custom
+        />
+      </a>
     </router-link>
-    <SideButton v-bind:chart="true" class="side__el" />
-    <SideButton v-bind:wallet="true" class="side__el" />
-    <SideButton v-bind:attachment="true" class="side__el" />
-    <SideButton v-bind:document="true" class="side__el" />
-    <SideButton v-bind:ticket="true" class="side__el" />
-    <SideButton v-bind:settings="true" class="side__el" />
-    <SideButton v-bind:product-chart="true" class="side__el" />
-    <SideButton v-bind:users="true" class="side__el" />
+
+    <router-link to="/wallet" v-slot="{ isActive, navigate }" custom>
+      <a @click="navigate">
+        <SideButton
+          v-bind:wallet="true"
+          :isClicked="isActive"
+          class="side__el"
+        />
+      </a>
+    </router-link>
+
+    <router-link to="/attachment" v-slot="{ isActive, navigate }" custom>
+      <a @click="navigate">
+        <SideButton
+          v-bind:attachment="true"
+          :isClicked="isActive"
+          class="side__el"
+        />
+      </a>
+    </router-link>
+
+    <router-link to="/document" v-slot="{ isActive, navigate }" custom>
+      <a @click="navigate">
+        <SideButton
+          v-bind:document="true"
+          :isClicked="isActive"
+          class="side__el"
+        />
+      </a>
+    </router-link>
+
+    <router-link to="/ticket" v-slot="{ isActive, navigate }" custom>
+      <a @click="navigate">
+        <SideButton
+          v-bind:ticket="true"
+          :isClicked="isActive"
+          class="side__el"
+        />
+      </a>
+    </router-link>
+
+    <router-link to="/settings" v-slot="{ isActive, navigate }" custom>
+      <a @click="navigate">
+        <SideButton
+          v-bind:settings="true"
+          :isClicked="isActive"
+          class="side__el"
+        />
+      </a>
+    </router-link>
+
+    <router-link to="/product-chart" v-slot="{ isActive, navigate }" custom>
+      <a @click="navigate">
+        <SideButton
+          v-bind:product-chart="true"
+          :isClicked="isActive"
+          class="side__el"
+        />
+      </a>
+    </router-link>
+
+    <router-link to="/users" v-slot="{ isActive, navigate }" custom>
+      <a @click="navigate">
+        <SideButton
+          v-bind:users="true"
+          :isClicked="isActive"
+          class="side__el"
+        />
+      </a>
+    </router-link>
   </div>
 </template>
 
@@ -40,12 +119,13 @@ export default {
   align-items: center;
 }
 
-.side__logo{
+.side__logo {
   margin-top: 28px;
   margin-bottom: 28px;
 }
 
-.side__el{
+.side__el {
   margin: 12px 24px 12px 24px;
+  position: relative;
 }
 </style>

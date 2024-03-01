@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div :class="{ pseudo: isClicked }">
     <button v-if="logo" class="side__button side__button--logo" />
     <button
       v-if="tools"
@@ -48,8 +48,6 @@
     ></button>
   </div>
 </template>
-
-//TODO: ПЕРЕДЕЛАТЬ НА ROUTER LINK
 
 <script>
 export default {
@@ -100,16 +98,6 @@ export default {
       default: false,
     },
   },
-  // data: function () {
-  //   return {
-  //     isClicked: false,
-  //   };
-  // },
-  methods: {
-    clicked() {
-      this.isClicked = !this.isClicked;
-    },
-  },
 };
 </script>
 
@@ -137,8 +125,17 @@ export default {
 .clicked {
   background-color: #8f20ef;
 }
-.clicked::before {
+
+.pseudo::before {
+  content: "";
   position: absolute;
+  width: 4px;
+  height: 20px;
+  right: 42px;
+  top: 4px;
+  border-radius: 0px 100px 100px 0px;
+  background-color: #8F20EF;
+
 }
 .side__button--tools {
   mask-size: cover;

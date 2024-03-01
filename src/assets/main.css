@@ -1,2 +1,6 @@
 @import "./normalize.css";
 
+
+body{
+    font-family: "Commissioner", sans-serif;
+}
