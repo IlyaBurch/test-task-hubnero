@@ -1,10 +1,10 @@
 <script>
-import SideWidget from './components/sidemenu/SideWidget.vue';
+import SideWidget from "./components/sidemenu/SideWidget.vue";
 
 export default {
   components: {
     SideWidget,
-  }
+  },
 };
 </script>
 
@@ -21,7 +21,7 @@ export default {
 </template>
 
 <style scoped>
-.wrapper{
+.wrapper {
   display: grid;
   grid-template-columns: 72px auto;
 }
