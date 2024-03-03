@@ -13,12 +13,12 @@
 // };
 </script>
 
-<script setup>
+<!-- <script setup>
 import { ref } from "vue";
 
 let b = ref(1);
 const counterA = () => (b.value += 1);
-</script>
+</script> -->
 
 <template>
   <main class="main">Страницы пока не существует</main>

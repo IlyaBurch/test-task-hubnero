@@ -1,6 +1,6 @@
 <template>
-  <div :class="{ pseudo: isClicked }">
-    <button v-if="logo" class="side__button side__button--logo" />
+  <div :class="{ pseudo: isClicked }" class="center">
+    <div class="center"><button v-if="logo" class="side__button side__button--logo" /></div>
     <button
       v-if="tools"
       :class="{ clicked: isClicked }"
@@ -102,6 +102,11 @@ export default {
 </script>
 
 <style scoped>
+.center {
+  display: grid;
+  place-items: center;
+}
+
 .side__button {
   width: 20px;
   height: 20px;
@@ -111,6 +116,8 @@ export default {
 }
 .side__button--logo {
   background-image: url(@/assets/icons/hubnero_logo.svg);
+  width: 20px;
+  height: 20px;
 }
 
 .side__button--menu {
@@ -134,8 +141,7 @@ export default {
   right: 42px;
   top: 4px;
   border-radius: 0px 100px 100px 0px;
-  background-color: #8F20EF;
-
+  background-color: #8f20ef;
 }
 .side__button--tools {
   mask-size: cover;

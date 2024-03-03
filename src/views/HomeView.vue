@@ -28,8 +28,8 @@ const counterA = () => (b.value += 1);
 </template>
 
 <style scoped>
-.main{
-  background-color: #F5F7FB;
+.main {
+  background-color: #f5f7fb;
   height: 100vh;
 }
 </style>

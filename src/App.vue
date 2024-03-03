@@ -1,9 +1,11 @@
 <script>
 import SideWidget from "./components/sidemenu/SideWidget.vue";
+import TheHeader from "./components/header/TheHeader.vue";
 
 export default {
   components: {
     SideWidget,
+    TheHeader,
   },
 };
 </script>
@@ -13,7 +15,7 @@ export default {
     <div class="wrapper">
       <SideWidget class="sidebar" />
       <div class="main-window">
-        <!-- header -->
+        <TheHeader />
         <router-view />
       </div>
     </div>
@@ -24,5 +26,11 @@ export default {
 .wrapper {
   display: grid;
   grid-template-columns: 72px auto;
+  height: 100%;
+}
+
+.sidebar {
+  position: sticky;
+  top: 0;
 }
 </style>

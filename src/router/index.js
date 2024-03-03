@@ -12,7 +12,7 @@ const router = new VueRouter({
   routes: [
     {
       path: "/",
-      redirect: { name: "users"},
+      redirect: { name: "users" },
       name: "home",
       component: HomeView,
     },
@@ -32,7 +32,7 @@ const router = new VueRouter({
       component: TestView,
     },
     {
-      path: "/attachment", 
+      path: "/attachment",
       name: "attachment",
       component: TestView,
     },

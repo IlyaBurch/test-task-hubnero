@@ -9,39 +9,44 @@
           {{ teamInfo.name }}
         </div>
       </div>
-      <div class="teaminfo__counts">
-        <div>
-          <span class="counts__num">{{ teamInfo.membersCount }}</span>
+      <div class="teaminfo__desc">
+        <div class="teaminfo__counts">
+          <div class="counts__num">{{ teamInfo.membersCount }}</div>
+          <div class="counts__text">members</div>
         </div>
-        <div>
-          <span class="counts__text">members</span>
+        <div class="divider" />
+        <div class="teaminfo__counts">
+          <div class="counts__num num--online">{{ teamInfo.online }}</div>
+          <div class="counts__text">online</div>
         </div>
-      </div>
-      <div class="divider"/>
-      <div class="teaminfo__counts">
-        <div>
-          <span class="counts__num">{{ teamInfo.online }}</span>
+        <div class="divider" />
+        <div class="teaminfo__counts">
+          <div class="counts__num">{{ teamInfo.men }}</div>
+          <div class="counts__text">men</div>
         </div>
-        <div>
-          <span class="counts__text">online</span>
+        <div class="teaminfo__counts teaminfo__counts--double">
+          <div class="counts__num">{{ teamInfo.women }}</div>
+          <div class="counts__text">women</div>
         </div>
-      </div>
-      <div class="divider"/>
-      <div class="teaminfo__counts">
-        <div>
-          <span class="counts__num">{{ teamInfo.men }}</span>
+        <div class="divider" />
+        <div class="teaminfo__counts">
+          <div class="counts__num">{{ teamInfo.averageAge }}</div>
+          <div class="counts__text">average age</div>
         </div>
-        <div>
-          <span class="counts__text">men</span>
+        <div class="divider" />
+        <div class="teaminfo__counts">
+          <div class="counts__num">{{ teamInfo.daysWorkAverage }}</div>
+          <div class="counts__text">days work on average</div>
         </div>
-      </div>
-      <div class="divider"/>
-      <div class="teaminfo__counts">
-        <div>
-          <span class="counts__num">{{ teamInfo.women }}</span>
+        <div class="divider" />
+        <div class="teaminfo__counts">
+          <div class="counts__num">{{ teamInfo.daysWorkNewEmployee }}</div>
+          <div class="counts__text">days work newest employee</div>
         </div>
-        <div>
-          <span class="counts__text">women</span>
+        <div class="divider" />
+        <div class="teaminfo__counts">
+          <div class="counts__num">{{ teamInfo.daysWorkOldEmployee }}</div>
+          <div class="counts__text">days work oldest employee</div>
         </div>
       </div>
     </div>
@@ -64,23 +69,34 @@ export default {
 .teaminfo {
   background-color: white;
   border-radius: 12px;
+  display: inline-block;
+  width: auto;
 }
 
 .teaminfo__wrapper {
   padding: 16px 28px 16px 28px;
-  width: auto;
+  /* width: ; */
   height: auto;
   display: flex;
   flex-direction: row;
   align-items: center;
 }
+
+.teaminfo__desc {
+  display: grid;
+  grid-auto-flow: column;
+  margin: 0 72px 0 72px;
+}
+
 .teaminfo__name {
   display: flex;
   flex-direction: row;
   align-items: center;
-  margin-right: 72px;
 }
 
+.teaminfo__counts--double {
+  margin-left: 40px;
+}
 .name__text {
   font-size: 14px;
   font-style: normal;
@@ -111,13 +127,21 @@ export default {
   font-style: normal;
   font-weight: 500;
   line-height: 130%;
+  position: relative;
 }
 
+.num--online::after {
+  content: url(@/assets/icons/ui/online-badge.svg);
+  position: absolute;
+  bottom: 7px;
+  /* width: */
+}
 .divider {
   width: 1px;
-  height: 47px;
+  height: 100%;
   background-color: #e5e8ef;
   margin-left: 36px;
   margin-right: 36px;
+  flex: 1;
 }
 </style>
